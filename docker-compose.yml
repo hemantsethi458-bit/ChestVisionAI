@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  chestvision-ai:
+    build: .
+    container_name: chestvision-ai
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./weights:/app/weights
+      - ./logs:/app/logs
+      - ./reports/output:/app/reports/output
+    environment:
+      - CHESTVISION_DATA_ROOT=/app/data
+      - CHESTVISION_DEVICE=cpu
+    restart: unless-stopped
