@@ -52,7 +52,7 @@ def create_dataloaders(config: Config) -> DataLoaders:
     """
     dataframe = load_nih_dataframe(config.data.csv_path)
     split = split_by_patient(
-        dataframe=dataframe,
+        df=dataframe,
         train_ratio=config.data.train_ratio,
         val_ratio=config.data.val_ratio,
         test_ratio=config.data.test_ratio,
