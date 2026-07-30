@@ -2,8 +2,14 @@
 
 import streamlit as st
 
-from components.ui import render_sidebar
-from pages import history_page, model_info_page, performance_page, predict_page, settings_page
+from streamlit_app.components.ui import render_sidebar
+from streamlit_app.pages import (
+    history_page,
+    model_info_page,
+    performance_page,
+    predict_page,
+    settings_page,
+)
 
 st.set_page_config(
     page_title="ChestVision AI",
