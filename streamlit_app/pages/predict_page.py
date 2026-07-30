@@ -7,16 +7,17 @@ import streamlit as st
 from PIL import Image
 
 from configs.config import get_config
-from inference.predictor import ChestXrayPredictor
+
 from streamlit_app.components.ui import checkpoint_exists, load_image_uploader, render_header, show_missing_model_warning
 
 
 @st.cache_resource
 def get_predictor():
     """Load and cache predictor instance for the Streamlit session."""
-    config = get_config()
-    return ChestXrayPredictor(config=config)
+    from inference.predictor import ChestXrayPredictor
 
+config = get_config()
+return ChestXrayPredictor(config=config)
 
 def render() -> None:
     """Render prediction workflow page."""
