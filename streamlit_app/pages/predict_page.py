@@ -19,8 +19,6 @@ def get_predictor():
 
     config = get_config()
     return ChestXrayPredictor(config=config)
-config = get_config()
-return ChestXrayPredictor(config=config)
 
 def render() -> None:
     """Render prediction workflow page."""
