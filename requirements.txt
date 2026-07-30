@@ -17,3 +17,4 @@ reportlab
 PyYAML
 python-dotenv
 tqdm
+tensorboard
