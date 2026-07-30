@@ -14,8 +14,11 @@ from streamlit_app.components.ui import checkpoint_exists, load_image_uploader, 
 @st.cache_resource
 def get_predictor():
     """Load and cache predictor instance for the Streamlit session."""
+
     from inference.predictor import ChestXrayPredictor
 
+    config = get_config()
+    return ChestXrayPredictor(config=config)
 config = get_config()
 return ChestXrayPredictor(config=config)
 
